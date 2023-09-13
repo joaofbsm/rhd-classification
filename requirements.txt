@@ -1,0 +1,16 @@
+awscli
+botocore
+joblib
+jupyter
+numpy
+opencv-python
+pandas
+plotnine
+s3transfer
+scikit-image
+scikit-learn
+scipy
+seaborn
+statsmodels
+tqdm
+xlrd

@@ -1,0 +1,16 @@
+Bootstrap: docker
+From: tensorflow/tensorflow:1.12.0-gpu-py3
+
+%post
+	apt update
+	# -y flag is necessary, otherwise the building process is aborted
+	apt -y install htop git vim libsm6 libxrender1 libfontconfig1 libxext6
+	pip install virtualenv pymp-pypi multiprocess joblib tqdm seaborn plotnine scikit-learn scikit-image imageio opencv-python git+https://github.com/okankop/vidaug keras hyperopt
+
+%environment
+	# For correct jupyter notebook initialization
+    export XDG_RUNTIME_DIR=""
+    alias jn='jupyter notebook'
+
+%labels
+    creator Joao Francisco Martins <joaofbsm@dcc.ufmg.br>
